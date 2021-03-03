@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getData } from "../redux/actions/action";
+import {
+  getLondonData,
+  getMilanData,
+  getParisData,
+  getMoscowData,
+} from "../redux/actions/action";
 
 import { Icon } from "@iconify/react";
 import locationIcon from "@iconify-icons/ion/location";
@@ -9,13 +14,16 @@ export default function Weather(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getData(dispatch);
-  }, [getData]);
+    getLondonData(dispatch);
+    getParisData(dispatch);
+    getMilanData(dispatch);
+    getMoscowData(dispatch);
+  });
 
   return (
     <nav className="slidemenu">
       <input
-        onClick={() => getData(dispatch)}
+        onClick={() => getLondonData(dispatch)}
         type="radio"
         name="slideItem"
         id="slide-item-1"
@@ -30,6 +38,7 @@ export default function Weather(props) {
       </label>
 
       <input
+        onClick={() => getParisData(dispatch)}
         type="radio"
         name="slideItem"
         id="slide-item-2"
@@ -43,6 +52,7 @@ export default function Weather(props) {
       </label>
 
       <input
+        onClick={() => getMilanData(dispatch)}
         type="radio"
         name="slideItem"
         id="slide-item-3"
@@ -56,6 +66,7 @@ export default function Weather(props) {
       </label>
 
       <input
+        onClick={() => getMoscowData(dispatch)}
         type="radio"
         name="slideItem"
         id="slide-item-4"

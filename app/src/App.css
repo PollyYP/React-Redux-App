@@ -65,8 +65,8 @@
 
 div.widget {
   position: relative;
-  width: 355px;
-  height: 125px;
+  width: 410px;
+  height: 150px;
   margin: 15% auto;
   background-color: #fcfdfd;
   border-radius: 9px;
@@ -90,19 +90,16 @@ div.city {
 }
 
 div.temp {
+  text-align: center;
   font-size: 81px;
   color: rgba(0, 0, 0, 0.9);
   font-weight: 100;
 }
 
-div.panel {
-  display: inline-block;
-}
-
-div.right-panel {
-  position: absolute;
-  float: right;
-  top: 0;
-  margin-top: 35px;
-  padding-left: 10px;
+div.foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
 }
