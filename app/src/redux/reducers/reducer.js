@@ -1,13 +1,16 @@
-export const reducer = (state, action) => {
+const initialState = {
+  name: "",
+  temp: "",
+};
+
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_LOCATION":
-      return { ...state };
     case "FETCHING_DATA_START":
-      return { ...state };
+      return { ...state, name: action.payload, temp: action.payload };
     case "FETCHING_DATA_SUCCESS":
       return { ...state };
     case "FETCHING_DATA_FAILURE":
-      return { ...state };
+      return { ...state, error: action.payload };
     default:
       return state;
   }
